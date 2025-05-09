@@ -12,30 +12,29 @@ int main()
 
     std::mt19937 gen;
     std::uniform_int_distribution<> dist(1, 100);
-    int secret = dist(gen); // 1〜100 の乱数
+    int secret = dist(gen); // Random int number ranged from 1 to 100.
     int guess = 0;
     int iteration = 0;
 
-start: // Number Guessの開始
+start: // Start 'Number Guess'
     std::cout << "Input a number ranged from 1 to 100 : ";
     std::cin >> guess;
-    iteration++;
+    iteration++; // +1 time of # guess.
 
     if (guess < secret)
     {
         std::cout << "Guess number is higher than your input's.\n";
-        goto start;
+        goto start; // Return Line 19.
     }
     else if (guess > secret)
     {
         std::cout << "Guess number is lower than your input's.\n";
-        goto start;
+        goto start; // Return Line 19.
     }
     else
     {
         std::cout << "Correct! " << iteration << " times you guessed.\n";
-        // 状況終了
-        goto end;
+        goto end; // End of loop and go to end.
     }
 
 end:
